@@ -1,0 +1,355 @@
+
+$background: none;
+$color_green: green;
+$color_white: white;
+$color_leftMenuItem: #1511d6;
+$color_leftMenuItem_hover:#eb12b6;
+
+$border_Test: 1px solid black;
+
+$background_content: #808080;
+
+$background_left: url(../img/smartfone.png);
+$background_center: url(../img/tablet.png);
+$background_right: none;
+
+$font_content_h1: 32px 'Philosopher', sans-serif;
+$font_content_h2: 26px 'Philosopher', sans-serif;
+$font_content_p: 18px 'Philosopher', sans-serif;
+$font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
+
+@mixin textWhiteMixin{
+	h1{
+		margin:none;
+		font: $font_content_h1;
+		color:white;
+	}
+
+	h2{
+		display: inline;
+		padding: none;
+		font: $font_content_h2;
+		color:white;
+	}
+
+	p{
+		font: $font_content_p;
+		color:white;
+	}
+}
+
+.content{
+	.wrapper{
+		// letter-spacing: -0.3em;
+		position: relative;
+		border:$border_Test;
+	}
+
+	&__left, &__center, &__right{
+		border: $border_Test;
+		vertical-align: top;
+		position: relative;
+		display: inline-block;
+		margin: 0 auto;
+		padding: 0 0 0 0;
+		letter-spacing: normal;
+		top:0;
+		width:15%;
+	}
+
+	&__left{
+		// background: $background_left no-repeat;
+		background-size: contain;
+
+		margin: 20px 0 20px 0;
+		// width: 175px;
+		text-align: center;
+
+		min-height: 310px;
+
+	}
+
+	.leftMenu{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:50%;
+		margin-top: - 50%;
+
+		display: block;
+		vertical-align: middle;
+
+		.leftMenuItem{
+			font: $font_content_leftMenuItem;
+			h1{display: inline; font-size: 28px; font-color:#9600ff;}
+			a{text-decoration: none; color: $color_leftMenuItem;}	
+
+			a:hover{
+				color: $color_leftMenuItem_hover;
+			}	
+		}
+	}
+
+	
+	
+
+	&__center{
+		@extend .content__left;
+		// background: $background_center no-repeat;
+		background-size: contain;
+		// background-position: 100% 100%;
+		// height: 300px;
+		width: 60%;
+		min-height: 700px;
+		background-width: 100%;
+
+	}
+
+	&__right{
+		@extend .content__left;
+		// width: auto;
+		width: 20%;
+		// height:200px;
+
+		.itemCount{
+			position:relative;
+			input{
+				width:100%;
+			}
+		}
+	}
+}
+
+
+
+@mixin smallScreenContent{
+	.content{
+		margin: 0 0 0 0;
+		overflow: hidden;
+
+		&__left, &__center{
+			float: left;
+			display: block;
+			// margin:0 auto;
+		}
+
+		&__left{
+			margin: 20px 0 20px 0;
+			width: 175px;
+			// min-height: 300px;
+			background-size: contain;
+
+			.leftMenu{
+				float: left;
+				// margin-left: 10px;
+				.leftMenuItem{
+					
+					// margin: 0 auto;
+				}
+			}
+		}
+
+		&__center{
+			background: url(../img/tableForSmall.png) no-repeat scroll;
+			background-size: contain;
+
+			width: 100%;
+
+			.screenTabletContent{
+				// margin: 35px 35px 0 45px;
+				margin: 12% 20% 0 15%;
+				height: 320px;
+				overflow: scroll;
+			}
+
+			h1{
+				font-size: 16px;
+			}
+
+			p{
+				font-size: 11px;
+			}
+		}
+
+		.summary{
+			display: block;
+			.summaryItem{
+				display:block;
+
+				.mePhoto, .meDescription{
+					display:block;
+					// margin: 0 auto;
+				}
+				.mePhoto{
+					text-align:center;
+
+					// float:left;
+				}
+			}
+		}
+	}
+}
+
+@mixin mediumScreenContent{
+	@include smallScreenContent;
+
+	.content{
+
+		&__left, &__center{
+			float: none;
+			display: block;
+			margin:0 auto;
+			// margin: 20px auto 0 auto;
+		}
+
+		&__left{
+			// .leftMenu{
+				float: none;
+			// 	// margin-left: 10px;
+			// 	.leftMenuItem{
+					
+			// 		// margin: 0 auto;
+			// 	}
+			// }
+		}
+
+		&__center{
+			overflow: hidden;
+			clear:both;
+			max-width: 530px;
+
+			.screenTabletContent{
+				overflow: scroll;
+				clear:both;
+				height: 590px;
+				max-width: 730px;
+			}
+
+			h1{
+				font-size: 20px;
+			}
+
+			p{
+				font-size: 16px;
+			}
+		}
+
+		
+	}
+}
+
+@mixin largeScreenContent{
+	.content{
+		margin: 0 0 0 0;
+		overflow: hidden;
+
+		&__left, &__center{
+			// float: left;
+			display: block;
+			margin:0 auto;
+		}
+
+		&__left{
+			margin: 20px 0 20px 0;
+			width: 175px;
+			// min-height: 300px;
+			background-size: contain;
+
+			.leftMenu{
+				// float: left;
+				// margin-left: 10px;
+				.leftMenuItem{
+					
+					// margin: 0 auto;
+				}
+			}
+		}
+
+		&__center{
+			// background: url(../img/tableForSmall.png) no-repeat scroll;
+			// background-size: contain;
+			overflow: scroll;
+			width: 100%;
+
+
+			.screenTabletContent{
+				// margin: 35px 35px 0 45px;
+				margin: 7% 20% 0 15%;
+				height: 420px;
+				width: 75%;
+				overflow: scroll;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 320px){
+	@include smallScreenContent;
+}
+
+@media screen and (min-width: 320px) and(max-width: 600px){
+	@include smallScreenContent;
+
+	.content{
+
+		&__left, &__center{
+			// float: none;
+			display: block;
+			margin:0 auto;
+			// margin: 20px auto 0 auto;
+		}
+
+		&__left{
+				float: none;		
+			}
+
+		&__center{
+			overflow: hidden;
+			clear:both;
+
+			.screenTabletContent{
+				overflow: scroll;
+				clear:both;
+			}
+
+			h1{
+				font-size: 20px;
+			}
+
+			p{
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 601px) and (max-width: 806px){
+	@include mediumScreenContent;
+}
+
+@media screen and (min-width: 807px) and (max-width: 991px){
+	@include mediumScreenContent;
+}
+
+@media screen and(min-width:  992px) and (max-width: 1060px){
+	.content{
+		&__center{
+			.screenTabletContent{
+				margin: 12% 20% 0 15%;
+				height: 320px;
+			}
+		}
+	}
+}
+
+@media screen and(min-width:  992px) and (max-width: 1200px){
+	.content{
+		&__center{
+			.screenTabletContent{
+
+				// margin: 12% 20% 0 15%;
+				height: 300px;
+			}
+		}
+	}
+}

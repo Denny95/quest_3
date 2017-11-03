@@ -1,0 +1,15 @@
+.media{
+	clear: both;
+	// position: fixed;
+
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
+
+	&__banner{
+		display: inline;
+		width: 100%;
+		margin: 0 auto;
+
+	}
+}

@@ -1,0 +1,134 @@
+@import "_header";
+
+$backgroundFooter: none;
+$border_Test: 1px solid white;
+
+$font_footerText_a: 24px 'Philosopher', sans-serif;
+
+$font_footerText_h1: 24px 'Philosopher', sans-serif;
+$font_footerText_p: 18px 'Philosopher', sans-serif;
+
+
+$color_textWhite: #ffffff;
+
+$color_writeMe_a: #00deff;
+$color_writeMe_a_hover:#0d3a8c;
+
+$color_helpMe_a: #37ed2e;
+$color_helpMe_a_hover:#199b12;
+
+.footer{
+	clear: both;
+	position: relative;
+	width: 80%;
+
+	background: $backgroundFooter;
+	// height: 50px;
+
+	.wrapper{
+		
+	}
+
+	a{
+		text-decoration: none;
+		font: $font_footerText_a;
+	}
+
+	.footerItems{
+		position: relative;
+		width: 100%;
+		text-align: center;
+
+		p{
+			font: $font_footerText_p;
+			color: $color_textWhite;
+		}
+
+		h1{
+			font: $font_footerText_h1;
+			color: $color_textWhite;
+		}
+
+		.writeMe, .footerContacts, .helpMe{
+			display: inline-block;
+			width: 32%;
+			vertical-align: top;
+		}
+		.writeMe{
+			a{
+				text-decoration: none;
+				color:$color_writeMe_a;
+			}
+			a:hover{
+				color:$color_writeMe_a_hover;
+			}
+		}
+
+		.helpMe{
+			a{
+				text-decoration: none;
+				color:$color_helpMe_a;
+			}
+
+			a:hover{
+				color:$color_helpMe_a_hover;
+			}
+		}
+
+		.footerContacts{
+			.contact_itemCircle{
+				@include contactItemMixin;
+			}
+
+			.contact_itemCircle_VK{
+				@include contactItemMixin_vk;
+			}
+
+			.contact_itemCircle_f{
+				@include contactItemMixin_f;
+			}
+
+			.contact_itemCircle_yt{
+				@include contactItemMixin_yt;
+			}
+		}
+	}
+}
+
+
+@mixin smallScreenFooter{
+	.footer{
+		.footerItems{
+			.writeMe, .footerContacts, .helpMe{
+				display: block;
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@mixin mediumScreenFooter{
+
+}
+
+@mixin largeScreenFooter{
+
+}
+
+
+@media screen and (max-width: 320px) {
+	@include smallScreenFooter;
+}
+
+@media screen and (max-width: 600px){
+	@include smallScreenFooter;
+}
+
+@media screen and (min-width: 601px) and (max-width: 806px){
+	@include smallScreenFooter;
+}
+
+@media screen and (min-width: 807px) and (max-width: 991px){
+	@include smallScreenFooter;
+}

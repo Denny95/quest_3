@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Главная</title>
+	<!--Подключение моего css -->
+	<link href = "css/style.css" type = "text/css" rel = "stylesheet">
+
+	<!--Подключение анимаций -->
+	<link href = "css/animate.min.css" type = "text/css" rel = "stylesheet">	
+
+	<!--Подключение шрифтов гугл -->
+	<link href="https://fonts.googleapis.com/css?family=Amiri|Philosopher" rel="stylesheet">
+
+	<!-- Ссылки BOOTSTRAP -->
+	<!-- Latest compiled and minified CSS  (Bootstrap css) -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript (bootstrap js) -->
+	<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- END BOOTSTRAP LINK -->
+
+	<!--jQuery-->
+	<!-- <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> -->
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<!-- <script type="text/javascript" src="js/test.js"></script> -->
+	
+	<script type="text/javascript" src="js/animatedHover.js"></script>
+
+	<script type="text/javascript">
+		new WOW().init();
+	</script>
+
+</head>
+
+<!--видеозаставка на фон странцы (размещена до тега body !!!)-->
+
+
+<body class="loaded">
+
+
+<!-- BEGIN BODY -->
+<div class="main-wrapper">
+	
+<!-- BEGIN HEADER -->
+
+<!-- HEADER EOF   -->
+
+<!-- BEGIN CONTENT -->
+<<header lass="header">
+	
+</header><!-- /header -->
+	
+	<main class="content">		
+		<div class="wrapper">
+			<div class="content__left wow fadeInLeft" data-wow-duration="1s"  data-wow-offset="20">
+				<div class="leftMenu wow zoomIn" data-wow-duration="2.5s">
+<!-- 					<div class="leftMenuItem"><h1>Front-end</h1></div>
+					<div class="leftMenuItem"><a href="toBeContine.html">HTML+CSS</a></div>
+					<div class="leftMenuItem"><a href="toBeContine.html">JS+jQuery</a></div>
+					<div class="leftMenuItem"><a href="toBeContine.html">PHP+ MySQL</a></div>
+					<div class="leftMenuItem"><a href="toBeContine.html">Видеоуроки</a></div>
+					<div class="leftMenuItem"><a href="toBeContine.html">Утилиты</a></div>
+					<div class="leftMenuItem"><a href="toBeContine.html">Прочее</a></div>	 -->
+					<div class="filter">
+						<div class="filterItem">
+							<h1>Price</h1>
+							<input type="button" name="" value="low to hight">
+							<p></p>
+							<input type="button" name="" value="hight to low">
+						</div>
+						<div class="filterItem">
+							<h1>Item title</h1>
+							<input type="button" name="" value="ASC">
+							<h1></h1>
+							<input type="button" name="" value="DESC">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content__center wow fadeInRight" data-wow-duration="1s"  data-wow-offset="20" >
+				<div class = "fluid-container product" style="border: 1px solid black;">
+					<div class = "row">
+						<div class = "col-md-3 col-sm-6 productItem">
+							1
+						</div>
+						<div class = "col-md-3 col-sm-6 productItem">
+							2
+						</div>
+						<div class = "col-md-3 col-sm-6 productItem">
+							3
+						</div>
+						<div class = "col-md-3 col-sm-6 productItem">
+							4
+						</div>	
+						<div class = "col-md-3 col-sm-6 productItem">
+							5
+						</div>
+						<div class = "col-md-3 col-sm-6 productItem">
+							6
+						</div>
+						<div class = "col-md-3 col-sm-6 productItem">
+							7
+						</div>
+						<div class = "col-md-3 col-sm-6 productItem">
+							8
+						</div>																					
+					</div>
+				</div>
+		
+			</div>
+				
+			<div class="content__right">
+				<div class = "fluid-container basket" style="border: 1px solid black;">
+					<div class = "row basketItem">
+						<div class = "col-md-6 col-sm-12  itemName">
+							name product
+							<!-- te -->
+						</div>
+						<div class = "col-md-3 col-sm-12  itemCount">
+							<input type="number">
+						</div>
+
+						<div class = "col-md-3 col-sm-12 itemPrice">
+							<label type="number"> 150 </label>
+						</div>
+					</div>
+
+					<div class = "row basketItem">
+						<div class = "col-md-6 col-sm-12  itemName">
+							name product
+							<!-- te -->
+						</div>
+						<div class = "col-md-3 col-sm-12  itemCount">
+							<input type="number">
+						</div>
+
+						<div class = "col-md-3 col-sm-12 itemPrice">
+							<label type="number"> 150 </label>
+						</div>
+					</div>
+
+
+					<div class = "row basketTotal">
+						<div class = "col-md-12 col-sm-12 totalPrice">
+							<label for="">1500</label>
+						</div>
+						<div class = "col-md-12 col-sm-12 totalPrice">
+							<input type="button" value="send to back-end">
+						</div>
+					</div>
+
+			</div>
+		</div>		
+	</main>	
+
+<!-- CONTENT EOF   -->
+		
+
+	<!-- BEGIN FOOTER -->	
+	
+	<footer class = "footer">
+
+	</footer>
+	
+<!-- FOOTER EOF   -->
+
+</div>
+
+
+
+<!-- <div class="icon-load"></div>		 -->
+
+<!-- BODY EOF   -->
+	
+<!-- 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>		
+	<script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js" ></script>
+	
+	<script type="text/javascript" src="js/components/jquery.fancybox.js" ></script>
+	<script type="text/javascript" src="js/components/jquery.formstyler.js" ></script>
+	<script type="text/javascript" src="js/components/slick.js" ></script>
+	<script type="text/javascript" src="js/components/jquery.mCustomScrollbar.js" ></script>
+	
+	<script type="text/javascript" src="js/custom.js" ></script> -->
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+// box{ @include radius(10px);}
+/*hello*/
+
+$backgroundMain: url(../img/background.png) ;
+$font_contact_VK_Facebook: bold 18px Comic Sans;
+$color_text_White: #ffffff;
+
+
+
+.main-wrapper{
+	// background: $backgroundMain no-repeat;
+	
+	// background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-attachment: fixed; 
+    // position:fixed;
+	width: 100%;
+	min-height: 900px;
+    overflow: hidden;
+    z-index: -2;
+
+//Не корректно с анимациями при прокрутке !!!!!!!!!!!!!!!!!!!!!!!!!!
+	// position: fixed;
+	// top: 0;
+	// left: 0;
+    // overflow: auto;
+//Не корректно с анимациями при прокрутке !!!!!!!!!!!!!!!!!!!!!!!!!!
+}
+
+.header, .content, .footer, .media{
+	// margin: 3% 0 0 10%;
+}
+.header, .content, .footer{
+	margin: 3% 0 0 10%;
+}
+
+// .header{
+// 	margin-top: 3%;
+// }
+
+.mySign{
+	float: right;
+	text-indent: none;
+}
+
+.clearfix{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#video_bg {
+    /* Делаем так, чтобы видеофон занимал фиксированное положение. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Располагаем наш фон под всем содержимым на странице.
+    Для этого используем отрицательный z-index. */
+    z-index: 0;
+    /* Растягиваем видео так, чтобы не было видно черных полос и
+    чтобы независимо от разрешения экрана видеофон занимал все рабочее пространство. */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.carousel{
+    // background: #2f4357;
+    // margin-top: 20px;
+    // min-height: 430px;
+
+
+    width: 100%;
+    height: 100%;
+}
+.carousel .item{
+    width: 100%;
+    // min-height: 680px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+    // min-height: 550px;
+    height: 400px;
+    overflow: auto;
+
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+
+}
+.bs-example{
+  // margin: 20px;
+}
+
+
+
+@media (min-aspect-ratio: 16/9) {
+    #video_bg {
+        height: 300%;
+        top: -100%;
+    }
+}
+ 
+@media (max-aspect-ratio: 16/9) {
+    #video_bg {
+        width: 300%;
+        left: -100%;
+    }
+}
+ 
+@supports (object-fit: cover) {
+    #video_bg {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@mixin contactItemMixin{
+    position: relative;
+    display: inline-block;
+    // border: 1px solid white;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-left: 30px;
+    background: #4d73a4;
+
+    p{
+        position: absolute;
+        top:50%;
+        left:50%;
+        width: 50px;
+        height: 50px;
+
+        margin-left: -25px;
+        margin-top: -10px;
+
+        font: $font_contact_VK_Facebook;
+        color: $color_text_White;
+    }
+}
+
+@mixin contactItemMixin_vk{
+    background: #4d73a4;
+}
+
+@mixin contactItemMixin_f{
+    background: #3b5998;
+}
+
+@mixin contactItemMixin_yt{
+    border: none;
+    border-radius: 14px;
+    background: #c91c20;
+
+    width: 70px;
+    height: 50px;
+
+    p{
+        width: 70px;
+        height: 50px;
+        margin-left: -35px;
+        margin-top: -10px;
+    }
+}
+
+
+@media screen and (max-width: 996){
+    .header, .content, .footer{
+        margin:20px 0 0 0;
+    }
+}
+
+@mixin smallScreenContent{
+    .carousel{
+    // background: #2f4357;
+    // margin-top: 20px;
+    // min-height: 430px;
+
+
+    width: 100%;
+    height: 100%;
+}
+.carousel .item{
+    width: 100%;
+    // min-height: 680px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+    // min-height: 550px;
+    height: 400px;
+    overflow: auto;
+
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+
+}
+.bs-example{
+  // margin: 20px;
+}
+}
+
+@mixin mediumScreenContent{
+    
+}
+
+@mixin largeScreenContent{
+    
+}
+
+@media screen and (max-width: 320px){
+    @include smallScreenContent;
+}
+
+@media screen and (min-width: 320px) and(max-width: 600px){
+
+}
+

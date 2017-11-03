@@ -1,0 +1,141 @@
+.arrow_brown_left_b, .arrow_brown_right_b, .arrow_brown_right_l, .arrow_down_brown_l, .arrow_white_left_b, .arrow_white_right_b, .cart_brown, .cart_gray, .circle_brown, .home_brown, .home_gray, .logo, .arrow_brown_left_s, .arrow_brown_right_s, .arrow_white_left_s, .arrow_white_right_s, .loupe_brown, .loupe_gray, .menu_brown, .phone_brown, .phone_gray, .user_brown, .user_gray{
+	background: url(../img/sprites.png) no-repeat;
+}
+
+.arrow_brown_left_b{
+	background-position: -1px 0;
+	width: 14px;
+	height: 28px;
+}
+
+.arrow_brown_right_b{
+	background-position: -21px 0;
+	width: 14px;
+	height: 28px;
+}
+
+.arrow_brown_right_l{
+	background-position: -22px -51px ;
+	width: 7px;
+	height: 11px;
+}
+
+.arrow_down_brown_l{
+	background-position: -4px -52px ;
+	width: 11px;
+	height: 7px;
+}
+
+.arrow_white_left_b{
+	background-position: -43px -1px ;
+	width: 14px;
+	height: 28px;
+}
+
+.arrow_white_right_b{
+	background-position: -62px 0;
+	width: 14px;
+	height: 28px;
+}
+
+.cart_brown{
+	background-position: -101px 0;
+	width: 17px;
+	height: 17px;
+}
+
+.cart_gray{
+	background-position: -124px 0;
+	width: 17px;
+	height: 17px;
+}
+
+.circle_brown{
+	background-position: -2px -67px ;
+	width: 6px;
+	height: 6px;
+}
+
+.home_brown{
+	background-position: -101px -24px ;
+	width: 20px;
+	height: 16px;
+}
+
+.home_gray{
+	background-position: -125px -24px ;
+	width: 20px;
+	height: 16px;
+}
+
+.logo{
+	background-position: 0 -98px ;
+	width: 247px;
+	height: 30px;
+}
+
+.arrow_brown_left_s{
+	background-position: -5px -35px ;
+	width: 7px;
+	height: 14px;
+}
+
+.arrow_brown_right_s{
+	background-position: -20px -35px ;
+	width: 7px;
+	height: 14px;
+}
+
+.arrow_white_left_s{
+	background-position: -43px -35px ;
+	width: 7px;
+	height: 15px;
+}
+
+.arrow_white_right_s{
+	background-position: -59px -35px ;
+	width: 7px;
+	height: 15px;
+}
+
+.loupe_brown{
+	background-position: -101px -50px ;
+	width: 16px;
+	height: 16px;
+}
+
+.loupe_gray{
+	background-position: -125px -50px ;
+	width: 16px;
+	height: 16px;
+}
+
+.menu_brown{
+	background-position: -100px -73px ;
+	width: 16px;
+	height: 12px;
+}
+
+.phone_brown{
+	background-position: -154px 0;
+	width: 16px;
+	height: 17px;
+}
+
+.phone_gray{
+	background-position: -178px 0;
+	width: 16px;
+	height: 17px;
+}
+
+.user_brown{
+	background-position: -152px -23px ;
+	width: 19px;
+	height: 16px;
+}
+
+.user_gray{
+	background-position: -177px -24px ;
+	width: 19px;
+	height: 16px;
+}
