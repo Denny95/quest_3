@@ -35,8 +35,25 @@
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<!-- <script type="text/javascript" src="js/test.js"></script> -->
 	
+	
 	<script type="text/javascript" src="js/animatedHover.js"></script>
+	<script type="text/javascript" src="js/goods.js"></script>
+	<script type="text/javascript" src="js/angularGoods.js"></script>
 
+	<script type="text/javascript">
+		function animating(elem){
+			var effect = elem.data('effect');
+			elem.addClass('animated ' + effect).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				elem.removeClass('animated ' + effect);
+			}); //animated jello
+		}
+
+		$(document).ready(function($) {
+			$(".productItem").mouseenter(function() {
+				animating($(this));
+			});
+		});
+	</script>
 	<script type="text/javascript">
 		new WOW().init();
 	</script>
@@ -57,7 +74,7 @@
 <!-- HEADER EOF   -->
 
 <!-- BEGIN CONTENT -->
-<<header lass="header">
+<header lass="header">
 	
 </header><!-- /header -->
 	
@@ -65,17 +82,10 @@
 		<div class="wrapper">
 			<div class="content__left wow fadeInLeft" data-wow-duration="1s"  data-wow-offset="20">
 				<div class="leftMenu wow zoomIn" data-wow-duration="2.5s">
-<!-- 					<div class="leftMenuItem"><h1>Front-end</h1></div>
-					<div class="leftMenuItem"><a href="toBeContine.html">HTML+CSS</a></div>
-					<div class="leftMenuItem"><a href="toBeContine.html">JS+jQuery</a></div>
-					<div class="leftMenuItem"><a href="toBeContine.html">PHP+ MySQL</a></div>
-					<div class="leftMenuItem"><a href="toBeContine.html">Видеоуроки</a></div>
-					<div class="leftMenuItem"><a href="toBeContine.html">Утилиты</a></div>
-					<div class="leftMenuItem"><a href="toBeContine.html">Прочее</a></div>	 -->
 					<div class="filter">
 						<div class="filterItem">
 							<h1>Price</h1>
-							<input type="button" name="" value="low to hight">
+							<input type="button" name="" value="low to hight" onclick="sortByCost()">
 							<p></p>
 							<input type="button" name="" value="hight to low">
 						</div>
@@ -87,37 +97,57 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="content__center wow fadeInRight" data-wow-duration="1s"  data-wow-offset="20" >
-				<div class = "fluid-container product" style="border: 1px solid black;">
-					<div class = "row">
-						<div class = "col-md-3 col-sm-6 productItem">
+
+				<div class = "fluid-container product">
+					<div class = "fluid-row" id = "out">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							1
 						</div>
-						<div class = "col-md-3 col-sm-6 productItem">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							2
 						</div>
-						<div class = "col-md-3 col-sm-6 productItem">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							3
 						</div>
-						<div class = "col-md-3 col-sm-6 productItem">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							4
 						</div>	
-						<div class = "col-md-3 col-sm-6 productItem">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							5
 						</div>
-						<div class = "col-md-3 col-sm-6 productItem">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							6
 						</div>
-						<div class = "col-md-3 col-sm-6 productItem">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							7
 						</div>
-						<div class = "col-md-3 col-sm-6 productItem">
+						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							8
 						</div>																					
 					</div>
 				</div>
-		
+
+				<div class="fluid-container total">
+					<div class = "row">
+						<div class = "col-md-9 col-sm-9 totalItem">
+							<label for="">Total count of order in the shop:</label>
+						</div>
+
+						<div class = "col-md-3 col-sm-3 totalItem">
+							<label for="" class="totalOrder" value="150">150</label>
+						</div>
+					</div>
+
+					<div class = "row">
+						<div class = "col-md-9 col-sm-9 totalItem">
+							<label for="">Total count of order in the shop:</label>
+						</div>
+
+						<div class = "col-md-3 col-sm-3 totalItem">
+							<label for="" class="totalOrder" value="150">150</label>
+						</div>
+					</div>
+				</div>
 			</div>
 				
 			<div class="content__right">
@@ -159,9 +189,10 @@
 							<input type="button" value="send to back-end">
 						</div>
 					</div>
-
+				</div>
 			</div>
-		</div>		
+		</div>
+
 	</main>	
 
 <!-- CONTENT EOF   -->
@@ -192,6 +223,5 @@
 	<script type="text/javascript" src="js/components/jquery.mCustomScrollbar.js" ></script>
 	
 	<script type="text/javascript" src="js/custom.js" ></script> -->
-
 </body>
 </html>

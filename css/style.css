@@ -523,31 +523,29 @@
     margin: 0 auto; }
 
 .content .wrapper {
-  position: relative;
-  border: 1px solid black; }
-.content__left, .content__center, .content__right, .content__center, .content__right {
-  border: 1px solid black;
+  position: relative; }
+.content__left, .content__right, .content__right {
   vertical-align: top;
   position: relative;
   display: inline-block;
   margin: 0 auto;
   padding: 0 0 0 0;
   letter-spacing: normal;
-  top: 0;
-  width: 15%; }
-.content__left, .content__center, .content__right {
+  top: 0; }
+.content__left, .content__right {
   background-size: contain;
+  position: relative;
   margin: 20px 0 20px 0;
-  text-align: center;
-  min-height: 310px; }
+  min-height: 310px;
+  width: 75%; }
+.content .leftMenu, .content .product, .content .total {
+  display: inline-block;
+  vertical-align: top; }
 .content .leftMenu {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  margin-top: -50%;
-  display: block;
-  vertical-align: middle; }
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  width: 18%; }
   .content .leftMenu .leftMenuItem {
     font: 20px "Philosopher", sans-serif; }
     .content .leftMenu .leftMenuItem h1 {
@@ -559,30 +557,52 @@
       color: #1511d6; }
     .content .leftMenu .leftMenuItem a:hover {
       color: #eb12b6; }
-.content__center {
-  background-size: contain;
-  width: 60%;
-  min-height: 700px;
-  background-width: 100%; }
+.content .product {
+  position: relative;
+  width: 80%;
+  text-align: center; }
+  .content .product .productItem {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 200px;
+    border: 1px solid black;
+    overflow: hidden; }
+    .content .product .productItem .productImg {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      text-align: center; }
+      .content .product .productItem .productImg img {
+        width: 100%;
+        height: 100%; }
+  .content .product p {
+    font: 18px "Philosopher", sans-serif; }
+.content .total {
+  border: 1px solid black;
+  width: 100%; }
 .content__right {
   width: 20%; }
   .content__right .itemCount {
     position: relative; }
     .content__right .itemCount input {
       width: 100%; }
+  .content__right .totalPrice {
+    text-align: right;
+    padding-right: 20px; }
 
 @media screen and (max-width: 320px) {
   .content {
     margin: 0 0 0 0;
     overflow: hidden; }
-    .content__left, .content__center, .content__right, .content__center {
+    .content__left, .content__right, .content__center {
       float: left;
       display: block; }
-    .content__left, .content__center, .content__right {
+    .content__left, .content__right {
       margin: 20px 0 20px 0;
       width: 175px;
       background-size: contain; }
-      .content__left .leftMenu, .content__center .leftMenu, .content__right .leftMenu {
+      .content__left .leftMenu, .content__right .leftMenu {
         float: left; }
     .content__center {
       background: url(../img/tableForSmall.png) no-repeat scroll;
@@ -608,14 +628,14 @@
   .content {
     margin: 0 0 0 0;
     overflow: hidden; }
-    .content__left, .content__center, .content__right, .content__center {
+    .content__left, .content__right, .content__center {
       float: left;
       display: block; }
-    .content__left, .content__center, .content__right {
+    .content__left, .content__right {
       margin: 20px 0 20px 0;
       width: 175px;
       background-size: contain; }
-      .content__left .leftMenu, .content__center .leftMenu, .content__right .leftMenu {
+      .content__left .leftMenu, .content__right .leftMenu {
         float: left; }
     .content__center {
       background: url(../img/tableForSmall.png) no-repeat scroll;
@@ -638,10 +658,10 @@
         .content .summary .summaryItem .mePhoto {
           text-align: center; }
 
-  .content__left, .content__center, .content__right, .content__center {
+  .content__left, .content__right, .content__center {
     display: block;
     margin: 0 auto; }
-  .content__left, .content__center, .content__right {
+  .content__left, .content__right {
     float: none; }
   .content__center {
     overflow: hidden;
@@ -657,14 +677,14 @@
   .content {
     margin: 0 0 0 0;
     overflow: hidden; }
-    .content__left, .content__center, .content__right, .content__center {
+    .content__left, .content__right, .content__center {
       float: left;
       display: block; }
-    .content__left, .content__center, .content__right {
+    .content__left, .content__right {
       margin: 20px 0 20px 0;
       width: 175px;
       background-size: contain; }
-      .content__left .leftMenu, .content__center .leftMenu, .content__right .leftMenu {
+      .content__left .leftMenu, .content__right .leftMenu {
         float: left; }
     .content__center {
       background: url(../img/tableForSmall.png) no-repeat scroll;
@@ -687,11 +707,11 @@
         .content .summary .summaryItem .mePhoto {
           text-align: center; }
 
-  .content__left, .content__center, .content__right, .content__center {
+  .content__left, .content__right, .content__center {
     float: none;
     display: block;
     margin: 0 auto; }
-  .content__left, .content__center, .content__right {
+  .content__left, .content__right {
     float: none; }
   .content__center {
     overflow: hidden;
@@ -710,14 +730,14 @@
   .content {
     margin: 0 0 0 0;
     overflow: hidden; }
-    .content__left, .content__center, .content__right, .content__center {
+    .content__left, .content__right, .content__center {
       float: left;
       display: block; }
-    .content__left, .content__center, .content__right {
+    .content__left, .content__right {
       margin: 20px 0 20px 0;
       width: 175px;
       background-size: contain; }
-      .content__left .leftMenu, .content__center .leftMenu, .content__right .leftMenu {
+      .content__left .leftMenu, .content__right .leftMenu {
         float: left; }
     .content__center {
       background: url(../img/tableForSmall.png) no-repeat scroll;
@@ -740,11 +760,11 @@
         .content .summary .summaryItem .mePhoto {
           text-align: center; }
 
-  .content__left, .content__center, .content__right, .content__center {
+  .content__left, .content__right, .content__center {
     float: none;
     display: block;
     margin: 0 auto; }
-  .content__left, .content__center, .content__right {
+  .content__left, .content__right {
     float: none; }
   .content__center {
     overflow: hidden;
