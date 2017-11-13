@@ -18,26 +18,6 @@ $font_content_h2: 26px 'Philosopher', sans-serif;
 $font_content_p: 18px 'Philosopher', sans-serif;
 $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 
-@mixin textWhiteMixin{
-	h1{
-		margin:none;
-		font: $font_content_h1;
-		color:white;
-	}
-
-	h2{
-		display: inline;
-		padding: none;
-		font: $font_content_h2;
-		color:white;
-	}
-
-	p{
-		font: $font_content_p;
-		color:white;
-	}
-}
-
 .content{
 	.wrapper{
 		// letter-spacing: -0.3em;
@@ -82,23 +62,31 @@ $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 		text-align:center;
 		vertical-align: middle;
 		width:18%;
-		// position: absolute;
-		// width: 100%;
-		// height: 100%;
-		// top:50%;
-		// margin-top: - 50%;
-
-		// display: block;
+		.filter{
+			.filterItem{
+				h1{font: $font_content_h1; color:black;}
+				input{
+					font: $font_content_p; 
+					color: black; 
+					background:none;
+					border:1px solid black;
+					
+				}
+				input:hover{
+					background: #ffc; /* Цвет фона */
+					transition: 1s linear; /* Время изменения */
+				}
+			}
+		}
 		
-
-		.leftMenuItem{
-			font: $font_content_leftMenuItem;
-			h1{display: inline; font-size: 28px; font-color:#9600ff;}
-			a{text-decoration: none; color: $color_leftMenuItem;}	
-
-			a:hover{
-				color: $color_leftMenuItem_hover;
-			}	
+		.search{
+			margin: 25px 10px 25px 10px;
+			input{
+				width:100%;
+				padding-left: 10px;
+				font:$font_content_p;
+				color:#778899;
+			}
 		}
 	}
 
@@ -109,12 +97,12 @@ $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 		// vertical-align: middle;
 		.productItem{
 			position:relative;
-			// background:url(../img/apple.png);
+			background: #ffffff;
 			background-repeat: no-repeat;
 			background-size:contain;
 			// min-width:200px;
 			min-height:200px;
-			border:1px solid black;
+			border:3px solid black;
 			overflow:hidden;
 
 			.productImg{
@@ -130,32 +118,114 @@ $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 				}
 			}
 		}
+		h1{font:$font_content_h1;}
 		p{
 			font:$font_content_p;
 		}
 	}
 	
 	.total{
-		border:$border_Test;
+		border:1px solid black;
+		border-radius:5px;
+
 		width:100%;
-		// text-align:center;
+		margin-top:30px;
+
+		label{
+			font:bold $font_content_p;
+			color:#8B0000;
+		}
+
 	}
 
 	&__right{
 		@extend .content__left;
 		// width: auto;
 		width: 20%;
-		// height:200px;
-
-		.itemCount{
-			position:relative;
-			input{
-				width:100%;
-			}
+		min-height: auto;
+		border:1px solid black;
+		text-align:center;
+		
+		.basketTitle{
+			h1{font: $font_content_h1; color:black;}
 		}
+
+		.basket{
+			
+			.basketItem{
+				font: $font_content_p;
+				position:relative;
+				margin: 0 3px 0 3px;
+				// border:1px solid black;
+				.nameBasket{
+					 text-align: left;
+					 vertical-align: middle;
+					 // border:$border_Test;
+					 // margin-left:5px;
+					 padding:0;
+
+					
+					font-size:16px;
+					overflow:hidden;
+				}
+				.itemNumb{
+					position:relative;
+					// overflow:hidden;
+					// width:120px;
+
+					input{
+						font-size:12px;
+						padding:3px;
+						width:100%;
+						overflow:hidden;
+					}
+				}
+				.itemCount{
+					overflow:hidden;
+				}
+				.itemButtDel{
+					padding:0;
+					margin:0;
+					// width:100%;
+					button{
+						font: $font_content_p;
+
+						padding:0;
+						margin:0;
+						width:100%;
+						overflow:hidden;
+					}
+				}
+			}
+
+		}
+
+		.basketTotal{
+			text-align:right;
+				.basketTotalItem{
+					margin:30px 0 30px 0;
+					.totalCost{
+						p{
+							font:$font_content_p;
+							display:inline-block;
+						}
+						label{font:$font_content_p;}
+					}
+					
+					button{
+						font:bold $font_content_p;
+
+						height:100%;
+						width:100%;
+
+						min-height:35px;
+					}
+				}
+			}
+		
 		.totalPrice{
 			text-align:right;
-			padding-right: 20px;
+			// padding-right: 20px;
 		}
 	}
 }
@@ -163,66 +233,51 @@ $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 
 @mixin smallScreenContent{
 	.content{
-		margin: 0 0 0 0;
-		overflow: hidden;
-
-		&__left, &__center{
-			float: left;
-			display: block;
-			// margin:0 auto;
+		&__left, &__right{
+			display:block;
+			width: 80%;
+			margin: 0 auto;
 		}
 
 		&__left{
-			margin: 20px 0 20px 0;
-			width: 175px;
-			// min-height: 300px;
-			background-size: contain;
-
-			.leftMenu{
-				float: left;
-				// margin-left: 10px;
-				.leftMenuItem{
-					
-					// margin: 0 auto;
-				}
-			}
-		}
-
-		&__center{
-			background: url(../img/tableForSmall.png) no-repeat scroll;
-			background-size: contain;
-
-			width: 100%;
-
-			.screenTabletContent{
-				// margin: 35px 35px 0 45px;
-				margin: 12% 20% 0 15%;
-				height: 320px;
-				overflow: scroll;
-			}
-
-			h1{
-				font-size: 16px;
-			}
-
-			p{
-				font-size: 11px;
-			}
-		}
-
-		.summary{
-			display: block;
-			.summaryItem{
 				display:block;
-
-				.mePhoto, .meDescription{
-					display:block;
-					// margin: 0 auto;
+				width: 80%;
+				margin: 0 auto;
+			.leftMenu, .product,{
+				display:block;
+			}
+			.leftMenu{
+				width:100%;
+				margin: 0 0 30px 0;
+			}
+			.product{
+				width:100%;
+				text-align:center;
+				img{
+					max-width:180px;
 				}
-				.mePhoto{
-					text-align:center;
+			}
 
-					// float:left;
+			.total{
+				width:100%;
+			}
+		}
+
+		&__right{
+			margin-top:30px;
+			.basket{
+
+				.basketItem{
+					text-align:center;
+					margin:20px 0 0 0;
+					border:$border_Test;
+					.nameBasket{
+						// border:$border_Test;
+						text-align:center;
+					}
+					.nameBasket, .itemNumb, .itemCount, .itemButtDel{
+						width:100%;
+					}
 				}
 			}
 		}
@@ -231,50 +286,6 @@ $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 
 @mixin mediumScreenContent{
 	@include smallScreenContent;
-
-	.content{
-
-		&__left, &__center{
-			float: none;
-			display: block;
-			margin:0 auto;
-			// margin: 20px auto 0 auto;
-		}
-
-		&__left{
-			// .leftMenu{
-				float: none;
-			// 	// margin-left: 10px;
-			// 	.leftMenuItem{
-					
-			// 		// margin: 0 auto;
-			// 	}
-			// }
-		}
-
-		&__center{
-			overflow: hidden;
-			clear:both;
-			max-width: 530px;
-
-			.screenTabletContent{
-				overflow: scroll;
-				clear:both;
-				height: 590px;
-				max-width: 730px;
-			}
-
-			h1{
-				font-size: 20px;
-			}
-
-			p{
-				font-size: 16px;
-			}
-		}
-
-		
-	}
 }
 
 @mixin largeScreenContent{
@@ -328,38 +339,6 @@ $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 
 @media screen and (min-width: 320px) and(max-width: 600px){
 	@include smallScreenContent;
-
-	.content{
-
-		&__left, &__center{
-			// float: none;
-			display: block;
-			margin:0 auto;
-			// margin: 20px auto 0 auto;
-		}
-
-		&__left{
-				float: none;		
-			}
-
-		&__center{
-			overflow: hidden;
-			clear:both;
-
-			.screenTabletContent{
-				overflow: scroll;
-				clear:both;
-			}
-
-			h1{
-				font-size: 20px;
-			}
-
-			p{
-				font-size: 16px;
-			}
-		}
-	}
 }
 
 @media screen and (min-width: 601px) and (max-width: 806px){
@@ -372,22 +351,56 @@ $font_content_leftMenuItem: 20px 'Philosopher', sans-serif;
 
 @media screen and(min-width:  992px) and (max-width: 1060px){
 	.content{
-		&__center{
-			.screenTabletContent{
-				margin: 12% 20% 0 15%;
-				height: 320px;
+		&__left{
+			.product{
+				img{
+					max-width:180px;
+					max-height: 180px;
+
+					min-width:100px;
+					min-height:100px
+				}
+			}
+		}
+		&__right{
+			margin-top:30px;
+			.basket{
+
+				.basketItem{
+					display:block;
+					text-align:center;
+					margin:20px 0 0 0;
+					border:$border_Test;
+					.nameBasket{
+						text-align:center;
+					}
+					.nameBasket, .itemNumb, .itemCount, .itemButtDel{
+						width:100%;
+					}
+				}
 			}
 		}
 	}
 }
 
-@media screen and(min-width:  992px) and (max-width: 1200px){
+@media screen and(min-width:  992px) and (max-width: 1400px){
 	.content{
-		&__center{
-			.screenTabletContent{
+		&__right{
+			margin-top:30px;
+			.basket{
 
-				// margin: 12% 20% 0 15%;
-				height: 300px;
+				.basketItem{
+					display:block;
+					text-align:center;
+					margin:20px 0 0 0;
+					border:$border_Test;
+					.nameBasket{
+						text-align:center;
+					}
+					.nameBasket, .itemNumb, .itemCount, .itemButtDel{
+						width:100%;
+					}
+				}
 			}
 		}
 	}

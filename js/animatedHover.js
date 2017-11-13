@@ -5,15 +5,12 @@ function animating(elem){
 	}); //animated jello
 }
 
-$(document).ready(function($) {
-	// $(".header__logo").mouseenter(function() {
-	// 	animating($(this));
-	// });
-	
-	// $(".contact_itemCircle").mouseenter(function() {
-	// 	animating($(this));
-	// });
+function animateimgElem(){
 	$(".productItem").mouseenter(function() {
 		animating($(this));
 	});
+}
+
+$(document).ready(function($) {
+	animateimgElem();
 });

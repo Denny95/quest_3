@@ -1,14 +1,14 @@
 // box{ @include radius(10px);}
 /*hello*/
 
-$backgroundMain: url(../img/background.png) ;
+$backgroundMain: #4682B4 ;
 $font_contact_VK_Facebook: bold 18px Comic Sans;
 $color_text_White: #ffffff;
 
 
 
 .main-wrapper{
-	// background: $backgroundMain no-repeat;
+	background: $backgroundMain no-repeat;
 	
 	// background-size: 100% 100%;
     background-size: 100% 100%;

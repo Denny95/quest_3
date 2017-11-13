@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*hello*/
 .main-wrapper {
+  background: #4682B4 no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
   width: 100%;
@@ -86,6 +87,7 @@
 */
 /*hello*/
 .main-wrapper {
+  background: #4682B4 no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
   width: 100%;
@@ -546,27 +548,37 @@
   text-align: center;
   vertical-align: middle;
   width: 18%; }
-  .content .leftMenu .leftMenuItem {
-    font: 20px "Philosopher", sans-serif; }
-    .content .leftMenu .leftMenuItem h1 {
-      display: inline;
-      font-size: 28px;
-      font-color: #9600ff; }
-    .content .leftMenu .leftMenuItem a {
-      text-decoration: none;
-      color: #1511d6; }
-    .content .leftMenu .leftMenuItem a:hover {
-      color: #eb12b6; }
+  .content .leftMenu .filter .filterItem h1 {
+    font: 32px "Philosopher", sans-serif;
+    color: black; }
+  .content .leftMenu .filter .filterItem input {
+    font: 18px "Philosopher", sans-serif;
+    color: black;
+    background: none;
+    border: 1px solid black; }
+  .content .leftMenu .filter .filterItem input:hover {
+    background: #ffc;
+    /* ╨ж╨▓╨╡╤В ╤Д╨╛╨╜╨░ */
+    transition: 1s linear;
+    /* ╨Т╤А╨╡╨╝╤П ╨╕╨╖╨╝╨╡╨╜╨╡╨╜╨╕╤П */ }
+  .content .leftMenu .search {
+    margin: 25px 10px 25px 10px; }
+    .content .leftMenu .search input {
+      width: 100%;
+      padding-left: 10px;
+      font: 18px "Philosopher", sans-serif;
+      color: #778899; }
 .content .product {
   position: relative;
   width: 80%;
   text-align: center; }
   .content .product .productItem {
     position: relative;
+    background: #ffffff;
     background-repeat: no-repeat;
     background-size: contain;
     min-height: 200px;
-    border: 1px solid black;
+    border: 3px solid black;
     overflow: hidden; }
     .content .product .productItem .productImg {
       position: relative;
@@ -576,216 +588,224 @@
       .content .product .productItem .productImg img {
         width: 100%;
         height: 100%; }
+  .content .product h1 {
+    font: 32px "Philosopher", sans-serif; }
   .content .product p {
     font: 18px "Philosopher", sans-serif; }
 .content .total {
   border: 1px solid black;
-  width: 100%; }
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 30px; }
+  .content .total label {
+    font: bold 18px "Philosopher", sans-serif;
+    color: #8B0000; }
 .content__right {
-  width: 20%; }
-  .content__right .itemCount {
-    position: relative; }
-    .content__right .itemCount input {
-      width: 100%; }
+  width: 20%;
+  min-height: auto;
+  border: 1px solid black;
+  text-align: center; }
+  .content__right .basketTitle h1 {
+    font: 32px "Philosopher", sans-serif;
+    color: black; }
+  .content__right .basket .basketItem {
+    font: 18px "Philosopher", sans-serif;
+    position: relative;
+    margin: 0 3px 0 3px; }
+    .content__right .basket .basketItem .nameBasket {
+      text-align: left;
+      vertical-align: middle;
+      padding: 0;
+      font-size: 16px;
+      overflow: hidden; }
+    .content__right .basket .basketItem .itemNumb {
+      position: relative; }
+      .content__right .basket .basketItem .itemNumb input {
+        font-size: 12px;
+        padding: 3px;
+        width: 100%;
+        overflow: hidden; }
+    .content__right .basket .basketItem .itemCount {
+      overflow: hidden; }
+    .content__right .basket .basketItem .itemButtDel {
+      padding: 0;
+      margin: 0; }
+      .content__right .basket .basketItem .itemButtDel button {
+        font: 18px "Philosopher", sans-serif;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        overflow: hidden; }
+  .content__right .basketTotal {
+    text-align: right; }
+    .content__right .basketTotal .basketTotalItem {
+      margin: 30px 0 30px 0; }
+      .content__right .basketTotal .basketTotalItem .totalCost p {
+        font: 18px "Philosopher", sans-serif;
+        display: inline-block; }
+      .content__right .basketTotal .basketTotalItem .totalCost label {
+        font: 18px "Philosopher", sans-serif; }
+      .content__right .basketTotal .basketTotalItem button {
+        font: bold 18px "Philosopher", sans-serif;
+        height: 100%;
+        width: 100%;
+        min-height: 35px; }
   .content__right .totalPrice {
-    text-align: right;
-    padding-right: 20px; }
+    text-align: right; }
 
 @media screen and (max-width: 320px) {
-  .content {
-    margin: 0 0 0 0;
-    overflow: hidden; }
-    .content__left, .content__right, .content__center {
-      float: left;
+  .content__left, .content__right, .content__right {
+    display: block;
+    width: 80%;
+    margin: 0 auto; }
+  .content__left, .content__right {
+    display: block;
+    width: 80%;
+    margin: 0 auto; }
+    .content__left .leftMenu, .content__right .leftMenu, .content__left .product, .content__right .product {
       display: block; }
-    .content__left, .content__right {
-      margin: 20px 0 20px 0;
-      width: 175px;
-      background-size: contain; }
-      .content__left .leftMenu, .content__right .leftMenu {
-        float: left; }
-    .content__center {
-      background: url(../img/tableForSmall.png) no-repeat scroll;
-      background-size: contain;
+    .content__left .leftMenu, .content__right .leftMenu {
+      width: 100%;
+      margin: 0 0 30px 0; }
+    .content__left .product, .content__right .product {
+      width: 100%;
+      text-align: center; }
+      .content__left .product img, .content__right .product img {
+        max-width: 180px; }
+    .content__left .total, .content__right .total {
       width: 100%; }
-      .content__center .screenTabletContent {
-        margin: 12% 20% 0 15%;
-        height: 320px;
-        overflow: scroll; }
-      .content__center h1 {
-        font-size: 16px; }
-      .content__center p {
-        font-size: 11px; }
-    .content .summary {
-      display: block; }
-      .content .summary .summaryItem {
-        display: block; }
-        .content .summary .summaryItem .mePhoto, .content .summary .summaryItem .meDescription {
-          display: block; }
-        .content .summary .summaryItem .mePhoto {
-          text-align: center; } }
+  .content__right {
+    margin-top: 30px; }
+    .content__right .basket .basketItem {
+      text-align: center;
+      margin: 20px 0 0 0;
+      border: 1px solid black; }
+      .content__right .basket .basketItem .nameBasket {
+        text-align: center; }
+      .content__right .basket .basketItem .nameBasket, .content__right .basket .basketItem .itemNumb, .content__right .basket .basketItem .itemCount, .content__right .basket .basketItem .itemButtDel {
+        width: 100%; } }
 @media screen and (min-width: 320px) and (max-width: 600px) {
-  .content {
-    margin: 0 0 0 0;
-    overflow: hidden; }
-    .content__left, .content__right, .content__center {
-      float: left;
-      display: block; }
-    .content__left, .content__right {
-      margin: 20px 0 20px 0;
-      width: 175px;
-      background-size: contain; }
-      .content__left .leftMenu, .content__right .leftMenu {
-        float: left; }
-    .content__center {
-      background: url(../img/tableForSmall.png) no-repeat scroll;
-      background-size: contain;
-      width: 100%; }
-      .content__center .screenTabletContent {
-        margin: 12% 20% 0 15%;
-        height: 320px;
-        overflow: scroll; }
-      .content__center h1 {
-        font-size: 16px; }
-      .content__center p {
-        font-size: 11px; }
-    .content .summary {
-      display: block; }
-      .content .summary .summaryItem {
-        display: block; }
-        .content .summary .summaryItem .mePhoto, .content .summary .summaryItem .meDescription {
-          display: block; }
-        .content .summary .summaryItem .mePhoto {
-          text-align: center; }
-
-  .content__left, .content__right, .content__center {
+  .content__left, .content__right, .content__right {
     display: block;
+    width: 80%;
     margin: 0 auto; }
   .content__left, .content__right {
-    float: none; }
-  .content__center {
-    overflow: hidden;
-    clear: both; }
-    .content__center .screenTabletContent {
-      overflow: scroll;
-      clear: both; }
-    .content__center h1 {
-      font-size: 20px; }
-    .content__center p {
-      font-size: 16px; } }
+    display: block;
+    width: 80%;
+    margin: 0 auto; }
+    .content__left .leftMenu, .content__right .leftMenu, .content__left .product, .content__right .product {
+      display: block; }
+    .content__left .leftMenu, .content__right .leftMenu {
+      width: 100%;
+      margin: 0 0 30px 0; }
+    .content__left .product, .content__right .product {
+      width: 100%;
+      text-align: center; }
+      .content__left .product img, .content__right .product img {
+        max-width: 180px; }
+    .content__left .total, .content__right .total {
+      width: 100%; }
+  .content__right {
+    margin-top: 30px; }
+    .content__right .basket .basketItem {
+      text-align: center;
+      margin: 20px 0 0 0;
+      border: 1px solid black; }
+      .content__right .basket .basketItem .nameBasket {
+        text-align: center; }
+      .content__right .basket .basketItem .nameBasket, .content__right .basket .basketItem .itemNumb, .content__right .basket .basketItem .itemCount, .content__right .basket .basketItem .itemButtDel {
+        width: 100%; } }
 @media screen and (min-width: 601px) and (max-width: 806px) {
-  .content {
-    margin: 0 0 0 0;
-    overflow: hidden; }
-    .content__left, .content__right, .content__center {
-      float: left;
-      display: block; }
-    .content__left, .content__right {
-      margin: 20px 0 20px 0;
-      width: 175px;
-      background-size: contain; }
-      .content__left .leftMenu, .content__right .leftMenu {
-        float: left; }
-    .content__center {
-      background: url(../img/tableForSmall.png) no-repeat scroll;
-      background-size: contain;
-      width: 100%; }
-      .content__center .screenTabletContent {
-        margin: 12% 20% 0 15%;
-        height: 320px;
-        overflow: scroll; }
-      .content__center h1 {
-        font-size: 16px; }
-      .content__center p {
-        font-size: 11px; }
-    .content .summary {
-      display: block; }
-      .content .summary .summaryItem {
-        display: block; }
-        .content .summary .summaryItem .mePhoto, .content .summary .summaryItem .meDescription {
-          display: block; }
-        .content .summary .summaryItem .mePhoto {
-          text-align: center; }
-
-  .content__left, .content__right, .content__center {
-    float: none;
+  .content__left, .content__right, .content__right {
     display: block;
+    width: 80%;
     margin: 0 auto; }
   .content__left, .content__right {
-    float: none; }
-  .content__center {
-    overflow: hidden;
-    clear: both;
-    max-width: 530px; }
-    .content__center .screenTabletContent {
-      overflow: scroll;
-      clear: both;
-      height: 590px;
-      max-width: 730px; }
-    .content__center h1 {
-      font-size: 20px; }
-    .content__center p {
-      font-size: 16px; } }
+    display: block;
+    width: 80%;
+    margin: 0 auto; }
+    .content__left .leftMenu, .content__right .leftMenu, .content__left .product, .content__right .product {
+      display: block; }
+    .content__left .leftMenu, .content__right .leftMenu {
+      width: 100%;
+      margin: 0 0 30px 0; }
+    .content__left .product, .content__right .product {
+      width: 100%;
+      text-align: center; }
+      .content__left .product img, .content__right .product img {
+        max-width: 180px; }
+    .content__left .total, .content__right .total {
+      width: 100%; }
+  .content__right {
+    margin-top: 30px; }
+    .content__right .basket .basketItem {
+      text-align: center;
+      margin: 20px 0 0 0;
+      border: 1px solid black; }
+      .content__right .basket .basketItem .nameBasket {
+        text-align: center; }
+      .content__right .basket .basketItem .nameBasket, .content__right .basket .basketItem .itemNumb, .content__right .basket .basketItem .itemCount, .content__right .basket .basketItem .itemButtDel {
+        width: 100%; } }
 @media screen and (min-width: 807px) and (max-width: 991px) {
-  .content {
-    margin: 0 0 0 0;
-    overflow: hidden; }
-    .content__left, .content__right, .content__center {
-      float: left;
-      display: block; }
-    .content__left, .content__right {
-      margin: 20px 0 20px 0;
-      width: 175px;
-      background-size: contain; }
-      .content__left .leftMenu, .content__right .leftMenu {
-        float: left; }
-    .content__center {
-      background: url(../img/tableForSmall.png) no-repeat scroll;
-      background-size: contain;
-      width: 100%; }
-      .content__center .screenTabletContent {
-        margin: 12% 20% 0 15%;
-        height: 320px;
-        overflow: scroll; }
-      .content__center h1 {
-        font-size: 16px; }
-      .content__center p {
-        font-size: 11px; }
-    .content .summary {
-      display: block; }
-      .content .summary .summaryItem {
-        display: block; }
-        .content .summary .summaryItem .mePhoto, .content .summary .summaryItem .meDescription {
-          display: block; }
-        .content .summary .summaryItem .mePhoto {
-          text-align: center; }
-
-  .content__left, .content__right, .content__center {
-    float: none;
+  .content__left, .content__right, .content__right {
     display: block;
+    width: 80%;
     margin: 0 auto; }
   .content__left, .content__right {
-    float: none; }
-  .content__center {
-    overflow: hidden;
-    clear: both;
-    max-width: 530px; }
-    .content__center .screenTabletContent {
-      overflow: scroll;
-      clear: both;
-      height: 590px;
-      max-width: 730px; }
-    .content__center h1 {
-      font-size: 20px; }
-    .content__center p {
-      font-size: 16px; } }
+    display: block;
+    width: 80%;
+    margin: 0 auto; }
+    .content__left .leftMenu, .content__right .leftMenu, .content__left .product, .content__right .product {
+      display: block; }
+    .content__left .leftMenu, .content__right .leftMenu {
+      width: 100%;
+      margin: 0 0 30px 0; }
+    .content__left .product, .content__right .product {
+      width: 100%;
+      text-align: center; }
+      .content__left .product img, .content__right .product img {
+        max-width: 180px; }
+    .content__left .total, .content__right .total {
+      width: 100%; }
+  .content__right {
+    margin-top: 30px; }
+    .content__right .basket .basketItem {
+      text-align: center;
+      margin: 20px 0 0 0;
+      border: 1px solid black; }
+      .content__right .basket .basketItem .nameBasket {
+        text-align: center; }
+      .content__right .basket .basketItem .nameBasket, .content__right .basket .basketItem .itemNumb, .content__right .basket .basketItem .itemCount, .content__right .basket .basketItem .itemButtDel {
+        width: 100%; } }
 @media screen and (min-width: 992px) and (max-width: 1060px) {
-  .content__center .screenTabletContent {
-    margin: 12% 20% 0 15%;
-    height: 320px; } }
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-  .content__center .screenTabletContent {
-    height: 300px; } }
+  .content__left .product img, .content__right .product img {
+    max-width: 180px;
+    max-height: 180px;
+    min-width: 100px;
+    min-height: 100px; }
+  .content__right {
+    margin-top: 30px; }
+    .content__right .basket .basketItem {
+      display: block;
+      text-align: center;
+      margin: 20px 0 0 0;
+      border: 1px solid black; }
+      .content__right .basket .basketItem .nameBasket {
+        text-align: center; }
+      .content__right .basket .basketItem .nameBasket, .content__right .basket .basketItem .itemNumb, .content__right .basket .basketItem .itemCount, .content__right .basket .basketItem .itemButtDel {
+        width: 100%; } }
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+  .content__right {
+    margin-top: 30px; }
+    .content__right .basket .basketItem {
+      display: block;
+      text-align: center;
+      margin: 20px 0 0 0;
+      border: 1px solid black; }
+      .content__right .basket .basketItem .nameBasket {
+        text-align: center; }
+      .content__right .basket .basketItem .nameBasket, .content__right .basket .basketItem .itemNumb, .content__right .basket .basketItem .itemCount, .content__right .basket .basketItem .itemButtDel {
+        width: 100%; } }
 /*
 ================================================================================
 |                                     HEADER                                   |
@@ -793,6 +813,7 @@
 */
 /*hello*/
 .main-wrapper {
+  background: #4682B4 no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
   width: 100%;
@@ -1306,36 +1327,17 @@
     display: block;
     width: 100%;
     margin-bottom: 30px; } }
-form {
-  position: relative;
-  width: 300px;
-  margin: 0 auto; }
-  form .searchInp, form .searchBtn {
-    border: none;
-    outline: none;
-    cursor: pointer; }
-  form .searchInp {
-    width: 100%;
-    height: 42px;
-    padding-left: 15px;
-    background-color: transparent;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    font: 18px 'Amiri', serif;
-    color: #ffffff; }
-  form .searchBtn {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    top: 5px;
-    right: 8px;
-    background: url(../img/searchIcon.png) no-repeat;
-    background-size: contain;
-    cursor: pointer; }
-  form .searchBtn:before {
-    content: "";
-    font: 18px 'Amiri', serif;
-    color: #F9F0DA;
-    font-weight: bold; }
+button, input {
+  border-radius: 7px; }
+
+button {
+  background: none;
+  border: 1px solid black; }
+
+button:hover {
+  background: #ffc;
+  /* ╨ж╨▓╨╡╤В ╤Д╨╛╨╜╨░ */
+  transition: 1s linear;
+  /* ╨Т╤А╨╡╨╝╤П ╨╕╨╖╨╝╨╡╨╜╨╡╨╜╨╕╤П */ }
 
 /*# sourceMappingURL=style.css.map */

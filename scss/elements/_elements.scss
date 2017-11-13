@@ -1,0 +1,18 @@
+$font-family:'Philosopher', sans-serif;
+
+button, input{
+  border-radius:7px;
+}
+
+
+button{
+  background:none;
+  border:1px solid black;
+  
+}
+
+button:hover{
+  background: #ffc; /* Цвет фона */
+  // border: 1px solid red;
+  transition: 1s linear; /* Время изменения */
+}

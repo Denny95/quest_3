@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- <html ng-app = "app"> -->
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,36 +25,21 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 	<!-- Latest compiled and minified JavaScript (bootstrap js) -->
-	<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- END BOOTSTRAP LINK -->
 
 	<!--jQuery-->
-	<!-- <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> -->
 	<script type="text/javascript" src="js/wow.min.js"></script>
-	<!-- <script type="text/javascript" src="js/test.js"></script> -->
 	
-	
-	<script type="text/javascript" src="js/animatedHover.js"></script>
+	<!--Angular LINK-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+	<!--MY LINK`s-->
 	<script type="text/javascript" src="js/goods.js"></script>
-	<script type="text/javascript" src="js/angularGoods.js"></script>
+	<!-- <script type="text/javascript" src="js/angularGoods.js"></script> -->
 
-	<script type="text/javascript">
-		function animating(elem){
-			var effect = elem.data('effect');
-			elem.addClass('animated ' + effect).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				elem.removeClass('animated ' + effect);
-			}); //animated jello
-		}
-
-		$(document).ready(function($) {
-			$(".productItem").mouseenter(function() {
-				animating($(this));
-			});
-		});
-	</script>
 	<script type="text/javascript">
 		new WOW().init();
 	</script>
@@ -77,7 +63,7 @@
 <header lass="header">
 	
 </header><!-- /header -->
-	
+
 	<main class="content">		
 		<div class="wrapper">
 			<div class="content__left wow fadeInLeft" data-wow-duration="1s"  data-wow-offset="20">
@@ -85,21 +71,29 @@
 					<div class="filter">
 						<div class="filterItem">
 							<h1>Price</h1>
-							<input type="button" name="" value="low to hight" onclick="sortByCost()">
+							<input type="button" name="" id="lowToHight" value="low to hight">
 							<p></p>
-							<input type="button" name="" value="hight to low">
+							<input type="button" name="" id="hightToLow" value="hight to low">
 						</div>
 						<div class="filterItem">
 							<h1>Item title</h1>
-							<input type="button" name="" value="ASC">
+							<input type="button" name="" id = "ASK" value="ASC">
 							<h1></h1>
-							<input type="button" name="" value="DESC">
+							<input type="button" name="" id = "DESC" value="DESC" >
 						</div>
+					</div>
+
+					<div class="search">
+						<input type="text" id="searchInp">
 					</div>
 				</div>
 
 				<div class = "fluid-container product">
+					<!-- <div class = "fluid-row" id = "out" ng-controller="goodsCtrl"> -->
 					<div class = "fluid-row" id = "out">
+						<!-- {{goods}} -->
+
+						<!-- DEFAULT LIST -->
 						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							1
 						</div>
@@ -123,71 +117,46 @@
 						</div>
 						<div class = "col-md-3 col-sm-6 productItem" data-effect='jello'>
 							8
-						</div>																					
+						</div>																	
 					</div>
 				</div>
 
-				<div class="fluid-container total">
+				<div class="container-fluid total">
 					<div class = "row">
-						<div class = "col-md-9 col-sm-9 totalItem">
-							<label for="">Total count of order in the shop:</label>
+						<div class = "col-md-9 col-sm">
+							<label >Total count of orders in the shop:</label>
 						</div>
 
 						<div class = "col-md-3 col-sm-3 totalItem">
-							<label for="" class="totalOrder" value="150">150</label>
+							<label class="totalOrders" id="totalOrders" value="0">150</label>
 						</div>
 					</div>
 
 					<div class = "row">
 						<div class = "col-md-9 col-sm-9 totalItem">
-							<label for="">Total count of order in the shop:</label>
+							<label for="">Total count of items in the shop:</label>
 						</div>
 
 						<div class = "col-md-3 col-sm-3 totalItem">
-							<label for="" class="totalOrder" value="150">150</label>
+							<label for="" class="totalItems" value="0">150</label>
 						</div>
 					</div>
 				</div>
 			</div>
 				
 			<div class="content__right">
-				<div class = "fluid-container basket" style="border: 1px solid black;">
+				<div class = "basketTitle">
+					<h1>BASKET</h1>
+				</div>
+				<div class = "container-fluid basket" id = "basket">			
 					<div class = "row basketItem">
-						<div class = "col-md-6 col-sm-12  itemName">
-							name product
-							<!-- te -->
-						</div>
-						<div class = "col-md-3 col-sm-12  itemCount">
-							<input type="number">
-						</div>
-
-						<div class = "col-md-3 col-sm-12 itemPrice">
-							<label type="number"> 150 </label>
-						</div>
+						
 					</div>
-
-					<div class = "row basketItem">
-						<div class = "col-md-6 col-sm-12  itemName">
-							name product
-							<!-- te -->
-						</div>
-						<div class = "col-md-3 col-sm-12  itemCount">
-							<input type="number">
-						</div>
-
-						<div class = "col-md-3 col-sm-12 itemPrice">
-							<label type="number"> 150 </label>
-						</div>
-					</div>
-
-
-					<div class = "row basketTotal">
-						<div class = "col-md-12 col-sm-12 totalPrice">
-							<label for="">1500</label>
-						</div>
-						<div class = "col-md-12 col-sm-12 totalPrice">
-							<input type="button" value="send to back-end">
-						</div>
+				</div>
+				<div class = "container-fluid basketTotal">			
+					<div class = "row basketTotalItem">
+						<div class="col-md-12 col-sm-12 totalCost" ><label id = "totalCost">Total cost is: 0</label></div>
+						<div class="col-md-12 col-sm-12 sendOrder"><button id = "sendOrderButt">Send order</button></div>
 					</div>
 				</div>
 			</div>
@@ -223,5 +192,6 @@
 	<script type="text/javascript" src="js/components/jquery.mCustomScrollbar.js" ></script>
 	
 	<script type="text/javascript" src="js/custom.js" ></script> -->
+	<script type="text/javascript" src="js/animatedHover.js"></script>
 </body>
 </html>
